@@ -16,7 +16,11 @@ class App extends Component {
     };
 
     colorChange = () => {
-      this.setState({color: this.state.color='blue'})
+      let red = Math.floor(Math.random()*255)
+      let green = Math.floor(Math.random()*255)
+      let blue = Math.floor(Math.random()*255)
+
+      this.setState({color: `rgb(${red},${green},${blue})`})
     };
 
     
@@ -24,11 +28,13 @@ render() {
 
       const styleColor = {
       background: this.state.color
+
     };
       return(
       <div>
-        <div style={styleColor} onChange={this.colorChange}>{this.state.clickCounter}</div>
-        <button value={this.state.color} onClick ={this.increment} > click me</button>
+        <div style={styleColor} onClick={this.colorChange}>{this.state.clickCounter}</div>
+
+        <button onClick ={this.increment} > click me</button>
       </div>
     );
   }
