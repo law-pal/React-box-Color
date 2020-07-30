@@ -9,36 +9,30 @@ class App extends Component {
       color: 'orange',
       clickCounter: 0
     };
-
-  
-  }
+}
   //creating the increment function.
     increment = () => {
       this.setState({clickCounter: this.state.clickCounter +1});
     };
 
-    onChangeHandler = () => {
-      let newColor = 'blue';
-      if(this.state.color === newColor){
-      this.setState({color: this.state.newColor});
-      }
-    }
+    colorChange = () => {
+      this.setState({color: this.state.color='blue'})
+    };
+
     
+render() {
 
-
-
-
-  render() {
-    const styleColor = {
+      const styleColor = {
       background: this.state.color
     };
-    return(
+      return(
       <div>
-        <div style={styleColor}>{this.state.clickCounter}</div>
-            <button onChange={this.onChangeHandler} value={this.state.color} onClick ={this.increment} > click me</button>
+        <div style={styleColor} onChange={this.colorChange}>{this.state.clickCounter}</div>
+        <button value={this.state.color} onClick ={this.increment} > click me</button>
       </div>
     );
   }
 }
+
 
 export default App;
