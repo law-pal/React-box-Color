@@ -10,11 +10,12 @@ class App extends Component {
       clickCounter: 0
     };
 }
-  
+  //Increment function.
     increment = () => {
       this.setState({clickCounter: this.state.clickCounter +1});
     };
 
+    //Color Change function.
     colorChange = () => {
       let red = Math.floor(Math.random()*255)
       let green = Math.floor(Math.random()*255)
@@ -22,7 +23,6 @@ class App extends Component {
 
       this.setState({color: `rgb(${red},${green},${blue})`})
     };
-
     
 render() {
 
@@ -30,11 +30,13 @@ render() {
       background: this.state.color
 
     };
-      return(
-      <div>
-        <div style={styleColor} onClick={this.colorChange}>{this.state.clickCounter}</div>
 
-        <button onClick ={this.increment} > click me</button>
+    return(
+      <div>
+        <div className='container' style={styleColor} onClick={() => {this.increment();this.colorChange();}}>
+          <h1>{this.state.clickCounter}</h1>
+          <h1>Click me</h1>
+        </div>
       </div>
     );
   }
