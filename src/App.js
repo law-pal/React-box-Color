@@ -15,7 +15,7 @@ class App extends Component {
       this.setState({clickCounter: this.state.clickCounter +1});
     };
 
-    //Color Change function.
+    //Function to change color.
     colorChange = () => {
       let red = Math.floor(Math.random()*255)
       let green = Math.floor(Math.random()*255)
