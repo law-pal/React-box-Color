@@ -10,7 +10,7 @@ class App extends Component {
       clickCounter: 0
     };
 }
-  
+  // increment function.
     increment = () => {
       this.setState({clickCounter: this.state.clickCounter +1});
     };
